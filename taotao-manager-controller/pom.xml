@@ -9,8 +9,6 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>taotao-manager-controller</artifactId>
     <packaging>war</packaging>
-    <name>taotao-manager-controller Maven Webapp</name>
-    <url>http://maven.apache.org</url>
     <dependencies>
         <!-- JSP相关 -->
         <dependency>
@@ -25,12 +23,10 @@
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>servlet-api</artifactId>
-            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jsp-api</artifactId>
-            <scope>provided</scope>
         </dependency>
         <!-- 文件上传组件 -->
         <dependency>
@@ -38,8 +34,4 @@
             <artifactId>commons-fileupload</artifactId>
         </dependency>
     </dependencies>
-    <build>
-        <finalName>taotao-manager-controller</finalName>
-
-    </build>
 </project>

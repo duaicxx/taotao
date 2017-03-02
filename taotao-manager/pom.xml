@@ -34,14 +34,15 @@
                 <version>2.2</version>
                 <configuration>
                     <!--Deploy to server-->
-                    <server>tomcat7</server>
+                    <url> http://localhost/manager/text </url>
+                    <server>tomcat</server>
                     <username>admin</username>
                     <password>admin</password>
-                    <path>/</path>
+                    <path>/taotao</path>
                     <port>80</port>
                 </configuration>
             </plugin>
         </plugins>
-
+        <finalName>taotao</finalName>
     </build>
 </project>

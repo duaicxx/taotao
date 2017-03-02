@@ -36,6 +36,7 @@
         <commons-fileupload.version>1.3.1</commons-fileupload.version>
         <jedis.version>2.7.2</jedis.version>
         <solrj.version>4.10.3</solrj.version>
+        <log4j.version>2.6.2</log4j.version>
     </properties>
 
     <!--只定义依赖的版本-->
@@ -183,10 +184,30 @@
                 <artifactId>solr-solrj</artifactId>
                 <version>${solrj.version}</version>
             </dependency>
+            <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-core</artifactId>
+                <version>${log4j.version}</version>
+            </dependency>
 
         </dependencies>
 
     </dependencyManagement>
+    <distributionManagement>
+
+        <repository>
+            <id>taotao-releases</id>
+            <name>taotao releases</name>
+            <url>http://localhost:8081/nexus/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>taotao-snapshots</id>
+            <name>taotao snapshots</name>
+            <url>http://localhost:8081/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
     <build>
         <finalName>${project.artifactId}</finalName>
         <plugins>
@@ -222,6 +243,7 @@
             </plugins>
         </pluginManagement>
         <defaultGoal>install</defaultGoal>
+
     </build>
 
 </project>
