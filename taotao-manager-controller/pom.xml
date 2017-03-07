@@ -33,5 +33,15 @@
             <groupId>commons-fileupload</groupId>
             <artifactId>commons-fileupload</artifactId>
         </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.fastdfs.client</groupId>
+            <artifactId>java</artifactId>
+            <version>v1.1</version>
+        </dependency>
     </dependencies>
 </project>

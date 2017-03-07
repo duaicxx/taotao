@@ -1221,7 +1221,8 @@ function _setHtml(el, html) {
 		var temp = doc.getElementById('__kindeditor_temp_tag__');
 		temp.parentNode.removeChild(temp);
 	} catch(e) {
-		K(el).empty();
+		//noinspection JSUnresolvedFunction
+        K(el).empty();
 		K('@' + html, doc).each(function() {
 			el.appendChild(this);
 		});
@@ -9204,6 +9205,7 @@ if (typeof(SWFUpload) === "function") {
 
 		if (continueUpload) {
 			var stats = this.getStats();
+			debugger;
 			if (stats.files_queued > 0 && this.queueSettings.queue_cancelled_flag === false) {
 				this.startUpload();
 			} else if (this.queueSettings.queue_cancelled_flag === false) {

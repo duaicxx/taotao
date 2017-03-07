@@ -37,6 +37,7 @@
         <jedis.version>2.7.2</jedis.version>
         <solrj.version>4.10.3</solrj.version>
         <log4j.version>2.6.2</log4j.version>
+        <fastdfs.version>v1.1</fastdfs.version>
     </properties>
 
     <!--只定义依赖的版本-->
@@ -190,6 +191,8 @@
                 <artifactId>log4j-core</artifactId>
                 <version>${log4j.version}</version>
             </dependency>
+            <!-- https://mvnrepository.com/artifact/com.github.kischang/fastdfs-client -->
+
 
         </dependencies>
 
@@ -200,11 +203,13 @@
             <id>taotao-releases</id>
             <name>taotao releases</name>
             <url>http://localhost:8081/nexus/content/repositories/releases/</url>
+            <layout>default</layout>
         </repository>
         <snapshotRepository>
             <id>taotao-snapshots</id>
             <name>taotao snapshots</name>
             <url>http://localhost:8081/nexus/content/repositories/snapshots/</url>
+            <layout>default</layout>
         </snapshotRepository>
     </distributionManagement>
 
