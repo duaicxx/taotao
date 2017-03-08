@@ -1,6 +1,7 @@
 package com.taotao.controller;
 
 import com.taotao.common.pojo.PictureResult;
+import com.taotao.common.utils.JsonUtils;
 import com.taotao.service.PictureService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,7 +19,7 @@ public class PictureController {
     private PictureService pictureService;
     @RequestMapping("/upload")
     @ResponseBody
-    public PictureResult upload(MultipartFile uploadFile,String dir){
-        return  pictureService.uploadPic(uploadFile);
+    public String upload(MultipartFile uploadFile,String dir){
+        return JsonUtils.objectToJson( pictureService.uploadPic(uploadFile));
     }
 }

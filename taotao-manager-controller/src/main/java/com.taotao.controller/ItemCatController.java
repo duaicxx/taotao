@@ -1,19 +1,13 @@
 package com.taotao.controller;
 
-import com.taotao.common.pojo.EUDataGridResult;
 import com.taotao.common.pojo.EUTreeNode;
-import com.taotao.common.utils.FastDFSClient;
 import com.taotao.service.ItemCatService;
-import org.csource.common.MyException;
-import org.csource.fastdfs.*;
-import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.io.IOException;
 import java.util.List;
 
 /**
@@ -31,7 +25,7 @@ public class ItemCatController {
 
         return  itemCatService.getItemCatList(parendId);
     }
-    @Test
+  /*  @Test
     public void upload(){
         try {
             ClientGlobal.init("E:\\ideaPorject\\taotao\\taotao-manager-controller\\src\\main\\resources\\resource\\client.conf");
@@ -56,5 +50,5 @@ public class ItemCatController {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
+    }*/
 }
