@@ -90,6 +90,18 @@
       order by ${orderByClause}
     </if>
   </select>
+  <select id="selectParamItemByExample" resultType="java.util.Map" parameterType="com.taotao.pojo.TbItemParamExample" >
+    SELECT
+	param.id "id",
+	cat.id "itemCatId",
+	cat.`name` "itemCatName",
+	param.param_data "paramData",
+	param.created "created",
+	param.updated "updated"
+FROM
+	tb_item_param AS param
+LEFT JOIN tb_item_cat AS cat ON cat.id = param.item_cat_id
+  </select>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.taotao.pojo.TbItemParamExample" >
     select
     <if test="distinct" >

@@ -5,6 +5,7 @@ import com.taotao.pojo.TbItemParamExample;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
+import java.util.Map;
 
 public interface TbItemParamMapper {
     int countByExample(TbItemParamExample example);
@@ -34,4 +35,6 @@ public interface TbItemParamMapper {
     int updateByPrimaryKeyWithBLOBs(TbItemParam record);
 
     int updateByPrimaryKey(TbItemParam record);
+
+    List<Map<String,String>> selectParamItemByExample(TbItemParamExample example);
 }

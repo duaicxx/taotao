@@ -6,6 +6,7 @@ import com.taotao.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
@@ -16,7 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class IndexController {
     @Autowired
     private ItemService itemService;
-    @RequestMapping("index")
+    @RequestMapping(value = "index",method= RequestMethod.POST)
     @ResponseBody
     public String index(long id) throws JsonProcessingException {
         ObjectMapper mapper = new ObjectMapper();

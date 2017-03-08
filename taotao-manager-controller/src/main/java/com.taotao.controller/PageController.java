@@ -3,6 +3,8 @@ package com.taotao.controller;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.taotao.common.pojo.EUDataGridResult;
+import com.taotao.common.pojo.TaotaoResult;
+import com.taotao.pojo.TbItem;
 import com.taotao.service.ItemCatService;
 import com.taotao.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +38,11 @@ public class PageController {
     @ResponseBody
     public EUDataGridResult getItemPage(Integer page, Integer rows){
          return  itemService.getItemList(page,rows);
+    }
+    @RequestMapping("/item/save")
+    @ResponseBody
+    public TaotaoResult saveItem(TbItem item, String desc){
+        return  itemService.createItem(item,desc);
     }
 
 }
