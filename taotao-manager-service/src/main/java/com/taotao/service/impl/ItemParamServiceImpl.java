@@ -4,6 +4,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.taotao.common.pojo.EUDataGridResult;
 import com.taotao.common.pojo.TaotaoResult;
+import com.taotao.common.utils.IDUtils;
 import com.taotao.mapper.TbItemParamMapper;
 import com.taotao.pojo.TbItemParam;
 import com.taotao.pojo.TbItemParamExample;
@@ -11,6 +12,7 @@ import com.taotao.service.ItemParamService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -40,6 +42,27 @@ public class ItemParamServiceImpl implements ItemParamService {
         List<TbItemParam> list = tbItemParamMapper.selectByExampleWithBLOBs(paramExample);
         if (list != null && list.size()>0){
             return TaotaoResult.ok(list.get(0));
+        }
+        return TaotaoResult.ok();
+    }
+
+    @Override
+    public TaotaoResult insertItemParam(long cid, String paramData) {
+        TbItemParam itemParam = new TbItemParam();
+        itemParam.setId(IDUtils.genItemId());
+        itemParam.setCreated(new Date());
+        itemParam.setUpdated(new Date());
+        itemParam.setItemCatId(cid);
+        itemParam.setParamData(paramData);
+        tbItemParamMapper.insert(itemParam);
+        return TaotaoResult.ok();
+    }
+
+    @Override
+    public TaotaoResult deleteItemParam(String ids) {
+        String [] idz = ids.split(",");
+        for (String id:idz) {
+            tbItemParamMapper.deleteByPrimaryKey(Long.parseLong(id));
         }
         return TaotaoResult.ok();
     }

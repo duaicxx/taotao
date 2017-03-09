@@ -27,4 +27,15 @@ public class ItemParamController {
     public TaotaoResult getItemParamByCatId(@PathVariable long cid){
         return itemParamService.getItemParamByCid(cid);
     }
+
+    @RequestMapping("/save/{cid}")
+    @ResponseBody
+    public TaotaoResult save(@PathVariable("cid") long cid,String paramData){
+        return itemParamService.insertItemParam(cid,paramData);
+    }
+    @RequestMapping("/delete")
+    @ResponseBody
+    public TaotaoResult delete(String ids){
+        return itemParamService.deleteItemParam(ids);
+    }
 }

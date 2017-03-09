@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
 import java.lang.ref.PhantomReference;
 
 /**
@@ -41,8 +42,15 @@ public class PageController {
     }
     @RequestMapping("/item/save")
     @ResponseBody
-    public TaotaoResult saveItem(TbItem item, String desc){
-        return  itemService.createItem(item,desc);
+    public TaotaoResult saveItem(TbItem item, String desc,String itemParams){
+        return  itemService.createItem(item,desc,itemParams);
+    }
+
+    @RequestMapping("/page/item/{id}")
+    public String item(@PathVariable("id") long id, HttpServletRequest request){
+        String html = itemService.getItemParamHtml(id);
+        request.setAttribute("myhtml",html);
+        return  "item-param";
     }
 
 }
