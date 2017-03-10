@@ -11,6 +11,7 @@
         <module>taotao-common</module>
         <module>taotao-manager</module>
         <module>taotao-rest</module>
+        <module>taotao-protal</module>
     </modules>
     <packaging>pom</packaging>
     <!-- 集中定义依赖版本号 -->
